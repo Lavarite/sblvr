@@ -1,0 +1,8 @@
+name: PluginSB
+version: '1.0-SNAPSHOT'
+main: me.lavarite.pluginsb.Items.PluginSB
+api-version: 1.18
+commands:
+  giveItem:
+    description: Gives Specified Item/-s to the player.
+    usage: /<command> <Item>

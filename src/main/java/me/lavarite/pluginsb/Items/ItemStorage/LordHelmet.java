@@ -1,13 +1,16 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
+import me.lavarite.pluginsb.Items.PluginSB;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +38,18 @@ public class LordHelmet {
         metaLH.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaLH.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         metaLH.setLore(loreLH);
+        NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
+        NamespacedKey Critdamage = new NamespacedKey(PluginSB.plugin, "Critdamage");
+        NamespacedKey Health = new NamespacedKey(PluginSB.plugin, "Health");
+        NamespacedKey Defence = new NamespacedKey(PluginSB.plugin, "Defence");
+        NamespacedKey Intelligence = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        metaLH.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 40.0);
+        metaLH.getPersistentDataContainer().set(Critdamage, PersistentDataType.DOUBLE, 0.15);
+        metaLH.getPersistentDataContainer().set(Health, PersistentDataType.DOUBLE, 115.0);
+        metaLH.getPersistentDataContainer().set(Defence, PersistentDataType.DOUBLE, 80.0);
+        metaLH.getPersistentDataContainer().set(Intelligence, PersistentDataType.DOUBLE, 75.0);
+        metaLH.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 5);
         LH.setItemMeta(metaLH);
         LORD_HELM = LH;
 

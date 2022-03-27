@@ -1,13 +1,16 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
+import me.lavarite.pluginsb.Items.PluginSB;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,14 @@ public class StormHelmet {
         metaSH.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaSH.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         metaSH.setLore(loreSH);
+        NamespacedKey Health = new NamespacedKey(PluginSB.plugin, "Health");
+        NamespacedKey Defence = new NamespacedKey(PluginSB.plugin, "Defence");
+        NamespacedKey Intelligence = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        metaSH.getPersistentDataContainer().set(Health, PersistentDataType.DOUBLE, 180.0);
+        metaSH.getPersistentDataContainer().set(Defence, PersistentDataType.DOUBLE, 80.0);
+        metaSH.getPersistentDataContainer().set(Intelligence, PersistentDataType.DOUBLE, 300.0);
+        metaSH.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 5);
         SH.setItemMeta(metaSH);
         STORM_HELM = SH;
 
@@ -41,8 +52,4 @@ public class StormHelmet {
         shc.setIngredient('a', new RecipeChoice.ExactChoice(strgDrag.STORM_FRAG));
         Bukkit.getServer().addRecipe(shc);
     }
-    public static int health = 180;
-    public static int defense = 80;
-    public static int intelligence = 500;
-    public static int rarity = 5;
 }

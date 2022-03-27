@@ -1,13 +1,16 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
+import me.lavarite.pluginsb.Items.PluginSB;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,14 @@ public class GoldorLeggings {
         metaGL.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaGL.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         metaGL.setLore(loreGL);
+        NamespacedKey Health = new NamespacedKey(PluginSB.plugin, "Health");
+        NamespacedKey Defence = new NamespacedKey(PluginSB.plugin, "Defence");
+        NamespacedKey Intelligence = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        metaGL.getPersistentDataContainer().set(Health, PersistentDataType.DOUBLE, 250.0);
+        metaGL.getPersistentDataContainer().set(Defence, PersistentDataType.DOUBLE, 220.0);
+        metaGL.getPersistentDataContainer().set(Intelligence, PersistentDataType.DOUBLE, 20.0);
+        metaGL.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 5);
         GL.setItemMeta(metaGL);
         GOLDOR_LEGS = GL;
 
@@ -41,8 +52,4 @@ public class GoldorLeggings {
         glc.setIngredient('g', new RecipeChoice.ExactChoice(strgDrag.GOLDOR_FRAG));
         Bukkit.getServer().addRecipe(glc);
     }
-    public static int health = 250;
-    public static int defense = 220;
-    public static int intelligence = 20;
-    public static int rarity = 5;
 }

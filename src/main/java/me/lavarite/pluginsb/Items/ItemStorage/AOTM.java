@@ -1,9 +1,12 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
+import me.lavarite.pluginsb.Items.PluginSB;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,11 +38,13 @@ public class AOTM {
         metaM.setUnbreakable(true);
         metaM.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaM.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        NamespacedKey Damage = new NamespacedKey(PluginSB.plugin, "Damage");
+        NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
+        NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        metaM.getPersistentDataContainer().set(Damage, PersistentDataType.DOUBLE, 120.0);
+        metaM.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 100.0);
+        metaM.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 4);
         MVOID.setItemMeta(metaM);
         MODIFIED_ASPECT_OF_THE_VOID = MVOID;
     }
-    public static int damage = 120;
-    public static double critdamage = 0.2;
-    public static int strength = 100;
-    public static int rarity = 4;
 }

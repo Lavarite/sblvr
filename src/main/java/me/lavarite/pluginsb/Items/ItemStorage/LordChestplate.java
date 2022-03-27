@@ -1,13 +1,16 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
+import me.lavarite.pluginsb.Items.PluginSB;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +38,18 @@ public class LordChestplate {
         metaLC.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaLC.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         metaLC.setLore(loreLC);
+        NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
+        NamespacedKey Critdamage = new NamespacedKey(PluginSB.plugin, "Critdamage");
+        NamespacedKey Health = new NamespacedKey(PluginSB.plugin, "Health");
+        NamespacedKey Defence = new NamespacedKey(PluginSB.plugin, "Defence");
+        NamespacedKey Intelligence = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        metaLC.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 50.0);
+        metaLC.getPersistentDataContainer().set(Critdamage, PersistentDataType.DOUBLE, 0.2);
+        metaLC.getPersistentDataContainer().set(Health, PersistentDataType.DOUBLE, 160.0);
+        metaLC.getPersistentDataContainer().set(Defence, PersistentDataType.DOUBLE, 130.0);
+        metaLC.getPersistentDataContainer().set(Intelligence, PersistentDataType.DOUBLE, 150.0);
+        metaLC.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 5);
         LC.setItemMeta(metaLC);
         LORD_CHEST = LC;
 
@@ -43,10 +58,4 @@ public class LordChestplate {
         lcc.setIngredient('t', new RecipeChoice.ExactChoice(strgDrag.LORD_FRAG));
         Bukkit.getServer().addRecipe(lcc);
     }
-    public static int strength = 50;
-    public static double critdamage = 0.2;
-    public static int health = 170;
-    public static int defense = 150;
-    public static int intelligence = 150;
-    public static int rarity = 5;
 }

@@ -1,13 +1,16 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
+import me.lavarite.pluginsb.Items.PluginSB;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +38,18 @@ public class LordLeggings {
         metaLL.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaLL.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         metaLL.setLore(loreLL);
+        NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
+        NamespacedKey Critdamage = new NamespacedKey(PluginSB.plugin, "Critdamage");
+        NamespacedKey Health = new NamespacedKey(PluginSB.plugin, "Health");
+        NamespacedKey Defence = new NamespacedKey(PluginSB.plugin, "Defence");
+        NamespacedKey Intelligence = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        metaLL.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 45.0);
+        metaLL.getPersistentDataContainer().set(Critdamage, PersistentDataType.DOUBLE, 0.2);
+        metaLL.getPersistentDataContainer().set(Health, PersistentDataType.DOUBLE, 135.0);
+        metaLL.getPersistentDataContainer().set(Defence, PersistentDataType.DOUBLE, 115.0);
+        metaLL.getPersistentDataContainer().set(Intelligence, PersistentDataType.DOUBLE, 100.0);
+        metaLL.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 5);
         LL.setItemMeta(metaLL);
         LORD_LEGS = LL;
 
@@ -43,10 +58,4 @@ public class LordLeggings {
         llc.setIngredient('u', new RecipeChoice.ExactChoice(strgDrag.LORD_FRAG));
         Bukkit.getServer().addRecipe(llc);
     }
-    public static int strength = 45;
-    public static double critdamage = 0.2;
-    public static int health = 135;
-    public static int defense = 115;
-    public static int intelligence = 100;
-    public static int rarity = 5;
 }

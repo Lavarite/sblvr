@@ -1,13 +1,16 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
+import me.lavarite.pluginsb.Items.PluginSB;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +38,18 @@ public class NecronHelmet {
         metaNH.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaNH.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         metaNH.setLore(loreNH);
+        NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
+        NamespacedKey Critdamage = new NamespacedKey(PluginSB.plugin, "Critdamage");
+        NamespacedKey Health = new NamespacedKey(PluginSB.plugin, "Health");
+        NamespacedKey Defence = new NamespacedKey(PluginSB.plugin, "Defence");
+        NamespacedKey Intelligence = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        metaNH.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 30.0);
+        metaNH.getPersistentDataContainer().set(Critdamage, PersistentDataType.DOUBLE, 0.1);
+        metaNH.getPersistentDataContainer().set(Health, PersistentDataType.DOUBLE, 180.0);
+        metaNH.getPersistentDataContainer().set(Defence, PersistentDataType.DOUBLE, 100.0);
+        metaNH.getPersistentDataContainer().set(Intelligence, PersistentDataType.DOUBLE, 30.0);
+        metaNH.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 5);
         NH.setItemMeta(metaNH);
         NECRON_HELM = NH;
 

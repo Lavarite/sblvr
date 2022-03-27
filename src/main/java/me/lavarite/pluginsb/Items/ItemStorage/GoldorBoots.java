@@ -1,13 +1,16 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
+import me.lavarite.pluginsb.Items.PluginSB;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +36,14 @@ public class GoldorBoots {
         metaGB.setLore(loreGB);
         metaGB.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaGB.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        NamespacedKey Health = new NamespacedKey(PluginSB.plugin, "Health");
+        NamespacedKey Defence = new NamespacedKey(PluginSB.plugin, "Defence");
+        NamespacedKey Intelligence = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        metaGB.getPersistentDataContainer().set(Health, PersistentDataType.DOUBLE, 190.0);
+        metaGB.getPersistentDataContainer().set(Defence, PersistentDataType.DOUBLE, 175.0);
+        metaGB.getPersistentDataContainer().set(Intelligence, PersistentDataType.DOUBLE, 20.0);
+        metaGB.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 5);
         GB.setItemMeta(metaGB);
         GOLDOR_BOOTS = GB;
 
@@ -41,8 +52,4 @@ public class GoldorBoots {
         gbc.setIngredient('j', new RecipeChoice.ExactChoice(strgDrag.GOLDOR_FRAG));
         Bukkit.getServer().addRecipe(gbc);
     }
-    public static int health = 190;
-    public static int defense = 175;
-    public static int intelligence = 20;
-    public static int rarity = 5;
 }

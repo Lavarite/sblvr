@@ -1,13 +1,17 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
+import me.lavarite.pluginsb.Items.PluginSB;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.RecipeChoice;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.persistence.PersistentDataType;
+import org.checkerframework.checker.units.qual.C;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +39,18 @@ public class LordBoots {
         metaLB.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaLB.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
         metaLB.setLore(loreLB);
+        NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
+        NamespacedKey Critdamage = new NamespacedKey(PluginSB.plugin, "Critdamage");
+        NamespacedKey Health = new NamespacedKey(PluginSB.plugin, "Health");
+        NamespacedKey Defence = new NamespacedKey(PluginSB.plugin, "Defence");
+        NamespacedKey Intelligence = new NamespacedKey(PluginSB.plugin, "Intelligence");
+        NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        metaLB.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 30.0);
+        metaLB.getPersistentDataContainer().set(Critdamage, PersistentDataType.DOUBLE, 0.2);
+        metaLB.getPersistentDataContainer().set(Health, PersistentDataType.DOUBLE, 95.0);
+        metaLB.getPersistentDataContainer().set(Defence, PersistentDataType.DOUBLE, 90.0);
+        metaLB.getPersistentDataContainer().set(Intelligence, PersistentDataType.DOUBLE, 50.0);
+        metaLB.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 5);
         LB.setItemMeta(metaLB);
         LORD_BOOTS = LB;
 
@@ -43,10 +59,4 @@ public class LordBoots {
         lbc.setIngredient('o', new RecipeChoice.ExactChoice(strgDrag.LORD_FRAG));
         Bukkit.getServer().addRecipe(lbc);
     }
-    public static int strength = 30;
-    public static double critdamage = 0.1;
-    public static int health = 105;
-    public static int defense = 75;
-    public static int intelligence = 50;
-    public static int rarity = 5;
 }

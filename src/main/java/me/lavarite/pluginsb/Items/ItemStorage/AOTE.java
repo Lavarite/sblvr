@@ -1,9 +1,12 @@
 package me.lavarite.pluginsb.Items.ItemStorage;
 
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +34,13 @@ public class AOTE {
         metaE.setUnbreakable(true);
         metaE.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
         metaE.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+        NamespacedKey Damage = new NamespacedKey((Plugin) this, "Damage");
+        NamespacedKey Strength = new NamespacedKey((Plugin) this, "Strength");
+        NamespacedKey Rarity = new NamespacedKey((Plugin) this, "Rarity");
+        metaE.getPersistentDataContainer().set(Damage, PersistentDataType.DOUBLE, 100.0);
+        metaE.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 100.0);
+        metaE.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 3);
         END.setItemMeta(metaE);
         ASPECT_OF_THE_END = END;
     }
-    public static int damage = 100;
-    public static int strength = 100;
-    public static int rarity = 3;
 }

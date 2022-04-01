@@ -39,8 +39,10 @@ public class AOTE {
         NamespacedKey Damage = new NamespacedKey(PluginSB.plugin, "Damage");
         NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
         NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        NamespacedKey ManaCost = new NamespacedKey(PluginSB.plugin, "ManaCost");
         metaE.getPersistentDataContainer().set(Damage, PersistentDataType.DOUBLE, 100.0);
         metaE.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 100.0);
+        metaE.getPersistentDataContainer().set(ManaCost, PersistentDataType.DOUBLE, 50.0);
         metaE.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 3);
         END.setItemMeta(metaE);
         ASPECT_OF_THE_END = END;

@@ -28,10 +28,10 @@ public class LordChestplate {
         metaLC.setDisplayName("§6Necrolord Chestplate");
         List<String> loreLC = new ArrayList<>();
         loreLC.add("§7Strength: §c+50");
-        loreLC.add("§7Crit Damage: §c+20");
-        loreLC.add("§7Health: §a+170");
-        loreLC.add("§7Defence: §a+150");
-        loreLC.add("§7Intelligence: §a+150");
+        loreLC.add("§7Crit Damage: §c+20%");
+        loreLC.add("§7Health: §a+160");
+        loreLC.add("§7Defence: §a+130");
+        loreLC.add("§7Intelligence: §a+130");
         loreLC.add("");
         loreLC.add("§6§l§ks§7 §6§lLEGENDARY CHESTPLATE §6§l§ks");
         metaLC.setUnbreakable(true);

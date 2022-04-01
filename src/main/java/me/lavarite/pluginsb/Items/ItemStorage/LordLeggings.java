@@ -27,10 +27,10 @@ public class LordLeggings {
         metaLL.setColor(Color.fromBGR(51,102,0));
         metaLL.setDisplayName("§6Necrolord Leggings");
         List<String> loreLL = new ArrayList<>();
-        loreLL.add("§7Strength: §c+260");
-        loreLL.add("§7Crit Damage: §c+150");
-        loreLL.add("§7Health: §a+30");
-        loreLL.add("§7Defence: §a+30");
+        loreLL.add("§7Strength: §c+45");
+        loreLL.add("§7Crit Damage: §c+20%");
+        loreLL.add("§7Health: §a+135");
+        loreLL.add("§7Defence: §a+115");
         loreLL.add("§7Intelligence: §a+100");
         loreLL.add("");
         loreLL.add("§6§l§ks§7 §6§lLEGENDARY LEGGINGS §6§l§ks");

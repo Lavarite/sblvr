@@ -41,9 +41,11 @@ public class AOTM {
         NamespacedKey Damage = new NamespacedKey(PluginSB.plugin, "Damage");
         NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
         NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        NamespacedKey ManaCost = new NamespacedKey(PluginSB.plugin, "ManaCost");
         metaM.getPersistentDataContainer().set(Damage, PersistentDataType.DOUBLE, 120.0);
         metaM.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 100.0);
         metaM.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 4);
+        metaM.getPersistentDataContainer().set(ManaCost, PersistentDataType.DOUBLE, 45.0);
         MVOID.setItemMeta(metaM);
         MODIFIED_ASPECT_OF_THE_VOID = MVOID;
     }

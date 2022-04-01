@@ -46,9 +46,11 @@ public class HYPE {
         NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
         NamespacedKey Intelligence = new NamespacedKey(PluginSB.plugin, "Intelligence");
         NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        NamespacedKey ManaCost = new NamespacedKey(PluginSB.plugin, "ManaCost");
         metaHP.getPersistentDataContainer().set(Damage, PersistentDataType.DOUBLE, 260.0);
         metaHP.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 150.0);
         metaHP.getPersistentDataContainer().set(Intelligence, PersistentDataType.DOUBLE, 350.0);
+        metaHP.getPersistentDataContainer().set(ManaCost, PersistentDataType.DOUBLE, 250.0);
         metaHP.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 5);
         HP.setItemMeta(metaHP);
         HYPERION = HP;

@@ -29,9 +29,9 @@ public class LordBoots {
         metaLB.setDisplayName("§6Necrolord Boots");
         List<String> loreLB = new ArrayList<>();
         loreLB.add("§7Strength: §c+30");
-        loreLB.add("§7Crit Damage: §c+10");
-        loreLB.add("§7Health: §a+105");
-        loreLB.add("§7Defence: §a+75");
+        loreLB.add("§7Crit Damage: §c+20%");
+        loreLB.add("§7Health: §a+95");
+        loreLB.add("§7Defence: §a+90");
         loreLB.add("§7Intelligence: §a+50");
         loreLB.add("");
         loreLB.add("§6§l§ks§7 §6§lLEGENDARY BOOTS §6§l§ks");

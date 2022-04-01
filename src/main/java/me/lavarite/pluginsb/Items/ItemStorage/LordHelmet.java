@@ -27,8 +27,8 @@ public class LordHelmet {
         metaLH.setColor(Color.fromBGR(102,51,0));
         metaLH.setDisplayName("§6Necrolord Helmet");
         List<String> loreLH = new ArrayList<>();
-        loreLH.add("§7Strength: §c+260");
-        loreLH.add("§7Crit Damage: §c+150");
+        loreLH.add("§7Strength: §c+40");
+        loreLH.add("§7Crit Damage: §c+15%");
         loreLH.add("§7Health: §a+115");
         loreLH.add("§7Defence: §a+80");
         loreLH.add("§7Intelligence: §a+75");

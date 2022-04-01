@@ -13,8 +13,8 @@ import java.util.Random;
 public class dragdrop implements Listener {
     @EventHandler
     public void dragdeath(EntityDeathEvent event){
-        LivingEntity Drag = event.getEntity();
-        if (Drag instanceof EnderDragon){
+        if (event.getEntity() instanceof EnderDragon){
+            LivingEntity Drag = event.getEntity();
             Random rand = new Random();
             if (Drag.getCustomName().equals("§5§lEnder Dragon")) {
                 int dAOTE = rand.nextInt(100);

@@ -19,8 +19,8 @@ import static org.apache.commons.lang.math.RandomUtils.nextInt;
     public class DragonTypes implements Listener {
         @EventHandler
         public void DragonTypesInit(CreatureSpawnEvent event) {
-            EnderDragon Drag = (EnderDragon) event.getEntity();
             if (event.getEntityType().equals(EntityType.ENDER_DRAGON)) {
+                EnderDragon Drag = (EnderDragon) event.getEntity();
                 int matchDrag = new Random().nextInt(100);
                 if (matchDrag > 58) {
                     Bukkit.broadcastMessage("§5§lEnder Dragon §r§5has spawned!");

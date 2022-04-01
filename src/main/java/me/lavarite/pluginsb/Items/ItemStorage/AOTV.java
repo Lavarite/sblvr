@@ -37,9 +37,11 @@ public class AOTV {
         NamespacedKey Damage = new NamespacedKey(PluginSB.plugin, "Damage");
         NamespacedKey Strength = new NamespacedKey(PluginSB.plugin, "Strength");
         NamespacedKey Rarity = new NamespacedKey(PluginSB.plugin, "Rarity");
+        NamespacedKey ManaCost = new NamespacedKey(PluginSB.plugin, "ManaCost");
         metaV.getPersistentDataContainer().set(Damage, PersistentDataType.DOUBLE, 120.0);
         metaV.getPersistentDataContainer().set(Strength, PersistentDataType.DOUBLE, 100.0);
         metaV.getPersistentDataContainer().set(Rarity, PersistentDataType.INTEGER, 4);
+        metaV.getPersistentDataContainer().set(ManaCost, PersistentDataType.DOUBLE, 45.0);
         VOID.setItemMeta(metaV);
         ASPECT_OF_THE_VOID = VOID;
     }

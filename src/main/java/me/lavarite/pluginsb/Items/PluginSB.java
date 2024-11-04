@@ -21,7 +21,7 @@ public final class PluginSB extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        System.out.println("Sup fucker");
+        System.out.println("SBLVR is up!");
         plugin = this;
         AIS.ItemInit();
 
